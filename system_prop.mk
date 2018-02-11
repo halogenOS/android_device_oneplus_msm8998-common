@@ -18,7 +18,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.min.duration.secs=30 \
     persist.dirac.acs.controller=qem \
     ro.dirac.acs.storeSettings=1 \
-    ro.dirac.ignore_error=1
+    ro.dirac.ignore_error=1 \
+    af.resampler.quality=7
 
 # Audio new
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -94,6 +95,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
+
+# Fling velocities
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.min.fling_velocity=140 \
+    ro.max.fling_velocity=20000
 
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
