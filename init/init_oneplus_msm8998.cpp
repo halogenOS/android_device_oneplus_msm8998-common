@@ -80,16 +80,15 @@ void init_target_properties()
     if (ReadFileToString(DEVINFO_FILE, &device)) {
         LOG(INFO) << "Device info: " << device;
 
+        property_set("ro.sf.lcd_density", "420");
         if (!strncmp(device.c_str(), "16859", 5)) {
             // Oneplus 5
             property_set("ro.display.series", "OnePlus 5");
-            property_set("ro.sf.lcd_density", "480");
             unknownDevice = false;
         }
         else if (!strncmp(device.c_str(), "17801", 5)) {
             // Oneplus 5T
             property_set("ro.display.series", "OnePlus 5T");
-            property_set("ro.sf.lcd_density", "420");
             unknownDevice = false;
         }
     }
