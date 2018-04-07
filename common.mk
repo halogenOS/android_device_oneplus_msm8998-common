@@ -160,6 +160,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service.oneplus5 \
+    camera.device@1.0-impl \
     camera.device@3.2-impl \
     SnapdragonCamera
 
@@ -355,10 +356,6 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml \
-    $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
