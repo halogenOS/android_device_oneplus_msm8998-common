@@ -181,6 +181,9 @@ BOARD_USES_QCNE := true
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
+# Dataservices
+TARGET_PROVIDES_IPACFG_MGR := true
+
 # Display
 BOARD_USES_ADRENO := true
 
