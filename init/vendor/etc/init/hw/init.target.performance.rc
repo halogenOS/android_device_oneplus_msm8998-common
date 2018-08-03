@@ -69,10 +69,10 @@ on late-fs
 on property:sys.boot_completed=1
     # Disable boot time fs tuning
     write /sys/block/sde/queue/read_ahead_kb 1024
-    write /sys/block/sde/queue/nr_requests 128
+    write /sys/block/sde/queue/nr_requests 192
     write /sys/block/sde/queue/iostats 1
     write /sys/block/sda/queue/read_ahead_kb 1024
-    write /sys/block/sda/queue/nr_requests 128
+    write /sys/block/sda/queue/nr_requests 192
     write /sys/block/sda/queue/iostats 1
 
     # Enable UFS powersaving
@@ -107,10 +107,10 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load 1
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif 1
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay 19000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 90
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 86
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1574400
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 1
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 0
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "83 1939200:90 2016000:95"
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 19000
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis 79000
@@ -191,8 +191,8 @@ on property:sys.boot_completed=1
 
     # Set up big.LITTLE scheduler configuration
     write /proc/sys/kernel/sched_migration_fixup 1
-    write /proc/sys/kernel/sched_upmigrate 95
-    write /proc/sys/kernel/sched_downmigrate 90
+    write /proc/sys/kernel/sched_upmigrate 94
+    write /proc/sys/kernel/sched_downmigrate 86
     write /proc/sys/kernel/sched_group_upmigrate 100
     write /proc/sys/kernel/sched_group_downmigrate 95
     write /proc/sys/kernel/sched_select_prev_cpu_us 0
