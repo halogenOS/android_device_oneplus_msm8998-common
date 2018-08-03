@@ -42,6 +42,7 @@ vendor.audio.hw.aac.encoder=true
 vendor.fm.a2dp.conc.disabled=true
 vendor.audio.noisy.broadcast.delay=600
 ro.config.media_vol_steps=25
+af.resampler.quality=7
 
 # Battery
 ro.cutoff_voltage_mv=3200
