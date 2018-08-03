@@ -74,6 +74,7 @@ vendor.audio.tunnel.encode=false
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.voice.path.for.pcm.voip=true
+af.resampler.quality=7
 
 # Bluetooth
 persist.vendor.bluetooth.a4wp=false
