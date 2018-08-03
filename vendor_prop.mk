@@ -68,7 +68,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.fm.a2dp.conc.disabled=true \
     vendor.audio.noisy.broadcast.delay=600 \
     ro.config.media_vol_steps=25 \
-    ro.config.vc_call_vol_steps=11
+    ro.config.vc_call_vol_steps=11 \
+    af.resampler.quality=7
 
 # Battery
 PRODUCT_PROPERTY_OVERRIDES += \
