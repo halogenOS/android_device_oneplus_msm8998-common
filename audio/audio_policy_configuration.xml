@@ -60,7 +60,7 @@
             <defaultOutputDevice>Speaker</defaultOutputDevice>
             <mixPorts>
                 <mixPort name="primary output" role="source" flags="AUDIO_OUTPUT_FLAG_FAST|AUDIO_OUTPUT_FLAG_PRIMARY">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                    <profile name="" format="AUDIO_FORMAT_PCM_24_BIT_PACKED"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
                 <mixPort name="raw" role="source"
@@ -74,7 +74,7 @@
                 </mixPort>
                 <mixPort name="deep_buffer" role="source"
                         flags="AUDIO_OUTPUT_FLAG_DEEP_BUFFER">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                    <profile name="" format="AUDIO_FORMAT_PCM_24_BIT_PACKED"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
                 <mixPort name="compress_passthrough" role="source"
@@ -82,8 +82,13 @@
                     <profile name="" format="dynamic"
                              samplingRates="dynamic" channelMasks="dynamic"/>
                 </mixPort>
-                <mixPort name="direct_pcm" role="source"
+                <mixPort name="multichannel" role="source"
                         flags="AUDIO_OUTPUT_FLAG_DIRECT">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="8000,11025,16000,22050,32000,44100,48000,64000,88200,96000,128000,176400,192000" channelMasks="dynamic"/>
+                </mixPort>
+                <mixPort name="direct_pcm" role="source"
+                        flags="AUDIO_OUTPUT_FLAG_DIRECT|AUDIO_OUTPUT_FLAG_DIRECT_PCM">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000,64000,88200,96000,128000,176400,192000"
                              channelMasks="AUDIO_CHANNEL_OUT_MONO,AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_2POINT1,AUDIO_CHANNEL_OUT_QUAD,AUDIO_CHANNEL_OUT_PENTA,AUDIO_CHANNEL_OUT_5POINT1,AUDIO_CHANNEL_OUT_6POINT1,AUDIO_CHANNEL_OUT_7POINT1"/>
@@ -177,12 +182,12 @@
                 </mixPort>
                 <mixPort name="voice_tx" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000,16000" channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
+                             samplingRates="8000,16000,48000" channelMasks="AUDIO_CHANNEL_OUT_MONO,AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
                 <mixPort name="voip_rx" role="source"
-                         flags="AUDIO_OUTPUT_FLAG_DIRECT|AUDIO_OUTPUT_FLAG_VOIP_RX">
+                         flags="AUDIO_OUTPUT_FLAG_VOIP_RX">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000,16000,32000,48000" channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
+                             samplingRates="8000,16000,32000,48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
 
                 <mixPort name="primary input" role="sink">
@@ -208,7 +213,7 @@
                 </mixPort>
                 <mixPort name="voice_rx" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000,16000" channelMasks="AUDIO_CHANNEL_IN_MONO"/>
+                             samplingRates="8000,16000,48000" channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO"/>
                 </mixPort>
                 <mixPort name="mmap_no_irq_in" role="sink" flags="AUDIO_INPUT_FLAG_MMAP_NOIRQ">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -315,9 +320,9 @@
                 <route type="mix" sink="Line"
                        sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,dsd_compress_passthrough,voip_rx,mmap_no_irq_out"/>
                 <route type="mix" sink="HDMI"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,compress_passthrough"/>
+                       sources="primary output,raw,deep_buffer,multichannel,direct_pcm,compressed_offload,compress_passthrough"/>
                 <route type="mix" sink="Proxy"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload"/>
+                       sources="primary output,raw,deep_buffer,multichannel,direct_pcm,compressed_offload"/>
                 <route type="mix" sink="FM"
                        sources="primary output"/>
                 <route type="mix" sink="BT SCO All"
