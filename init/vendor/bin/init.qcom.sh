@@ -65,3 +65,5 @@ fi
 cp /firmware/image/modem_pr/mbn_ota.txt /data/vendor/radio/modem_config
 chown radio.radio /data/vendor/radio/modem_config/mbn_ota.txt
 echo 1 > /data/vendor/radio/copy_complete
+
+sysctl -w net.ipv4.tcp_congestion_control=westwood
