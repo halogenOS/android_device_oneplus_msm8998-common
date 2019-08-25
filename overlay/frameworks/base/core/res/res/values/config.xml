@@ -607,4 +607,7 @@
 
     <!-- Whether device has oled display -->
     <bool name="config_hasOledDisplay">true</bool>
+
+    <!-- The maximum duration (in milliseconds) we expect a network transition to take -->
+    <integer name="config_networkTransitionTimeout">20000</integer>
 </resources>
