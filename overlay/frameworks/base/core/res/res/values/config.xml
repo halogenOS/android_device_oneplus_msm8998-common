@@ -639,4 +639,7 @@
 
     <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
     <bool name="config_cleanupUnusedFingerprints">false</bool>
+
+    <!-- The maximum duration (in milliseconds) we expect a network transition to take -->
+    <integer name="config_networkTransitionTimeout">20000</integer>
 </resources>
