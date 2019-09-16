@@ -1,0 +1,9 @@
+
+import /vendor/etc/init/hw/init.target.displaymodes.rc
+
+on boot
+    # Vibrator permissions
+    chown root system /sys/devices/virtual/timed_output/vibrator/vtg_level
+    chmod 0660 /sys/devices/virtual/timed_output/vibrator/vtg_level
+
+ 
