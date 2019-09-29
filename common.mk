@@ -187,6 +187,10 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0 \
     vendor.display.config@1.0_vendor
 
+# Device
+PRODUCT_PACKAGES += \
+    DeviceParts
+
 # Doze
 PRODUCT_PACKAGES += \
     Doze
