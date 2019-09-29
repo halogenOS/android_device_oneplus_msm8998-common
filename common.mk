@@ -216,6 +216,10 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.9 \
     vendor.display.config@1.9_vendor
 
+# Device
+PRODUCT_PACKAGES += \
+    DeviceParts
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
