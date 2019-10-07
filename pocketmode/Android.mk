@@ -1,4 +1,4 @@
-// TODO: ykwtd
+# TODO: ykwtd
 ifeq (true,false)
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)

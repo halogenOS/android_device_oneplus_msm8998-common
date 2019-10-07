@@ -1,5 +1,5 @@
 LOCAL_PATH:= $(call my-dir)
-// TODO: you know what to do
+#TODO: you know what to do
 ifeq (true,false)
 include $(CLEAR_VARS)
 
