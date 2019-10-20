@@ -7,3 +7,7 @@ type sysfs_fpc_irq, fs_type, sysfs_type;
 type sysfs_fpc_screen, fs_type, sysfs_type;
 type sysfs_fpc_proximity, fs_type, sysfs_type;
 type sysfs_wifi, fs_type, sysfs_type;
+
+# rootfs
+type op1_file, file_type;
+type op2_file, file_type;
