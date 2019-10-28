@@ -109,4 +109,12 @@ It allows additional grants on top of privapp-permissions-platform.xml
     <privapp-permissions package="com.qualcomm.location">
         <permission name="android.permission.MANAGE_USERS"/>
     </privapp-permissions>
+
+    <privapp-permissions package="com.qti.qualcomm.datastatusnotification">
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.qualcomm.qti.poweroffalarm">
+        <permission name="android.permission.SHUTDOWN"/>
+    </privapp-permissions>
 </permissions>
