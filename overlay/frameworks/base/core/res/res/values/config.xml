@@ -664,4 +664,10 @@
 
     <!-- The maximum duration (in milliseconds) we expect a network transition to take -->
     <integer name="config_networkTransitionTimeout">20000</integer>
+
+    <!-- Whether device ignores the RSSNR signal implementation -->
+    <bool name="config_ignoreRssnrSignalLevel">true</bool>
+
+    <!-- Audio volume panel -->
+    <bool name="config_audioPanelOnLeftSide">true</bool>
 </resources>
