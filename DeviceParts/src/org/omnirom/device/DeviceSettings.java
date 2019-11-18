@@ -108,11 +108,13 @@ public class DeviceSettings extends PreferenceFragment implements
         mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
 
         mHWKSwitch = (TwoStatePreference) findPreference(KEY_HWK_SWITCH);
+        buttonCategory = (PreferenceCategory) findPreference(KEY_BUTTON_CATEGORY);
         if (!sIsOnePlus5t) {
             mHWKSwitch.setEnabled(HWKSwitch.isSupported());
             mHWKSwitch.setOnPreferenceChangeListener(new HWKSwitch());
         } else {
             mHWKSwitch.setVisible(false);
+            buttonCategory.setVisible(false);
         }
     }
 
