@@ -447,8 +447,8 @@ PRODUCT_PACKAGES += \
     thermal.msm8998
 
 # Touch
-#PRODUCT_PACKAGES += \
-#    vendor.lineage.touch@1.0-service.oneplus_msm8998
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.oneplus_msm8998
 
 # USB
 PRODUCT_PACKAGES += \
