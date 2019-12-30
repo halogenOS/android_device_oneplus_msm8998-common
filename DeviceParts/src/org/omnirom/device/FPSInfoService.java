@@ -282,7 +282,7 @@ public class FPSInfoService extends Service {
 
     private boolean isDozeMode() {
         try {
-            if (mDreamManager != null && mDreamManager.isDreaming()) {
+            if (mDreamManager != null && mDreamManager.isDozing()) {
                 return true;
             }
         } catch (RemoteException e) {
