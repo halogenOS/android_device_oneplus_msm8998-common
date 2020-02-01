@@ -562,5 +562,6 @@
     <!-- Names of the key handler classes -->
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>com.derp.device.DeviceSettings.KeyHandler</item>
+        <item>com.derp.device.DeviceSettings.TouchKeyHandler</item>
     </string-array>
 </resources>
