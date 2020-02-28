@@ -12,7 +12,8 @@
     "target_path": "vendor/oneplus/msm8998-common"
   },
   {
-    "repository": "android_prebuilts_clang_host_linux-x86_clang-6207600",
-    "target_path": "prebuilts/clang/host/linux-x86/clang-6207600"
+    "repository": "halogenOS/android_prebuilts_clang_host_linux-x86_clang-6207600",
+    "target_path": "prebuilts/clang/host/linux-x86/clang-6207600",
+    "remote": "github"
   }
 ]
