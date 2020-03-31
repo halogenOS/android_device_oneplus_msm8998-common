@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2017 The LineageOS Open Source Project
-# Copyright (C) 2020 The halogenOS Project
+# Copyright (C) 2019-2020 The halogenOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
-	androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 \
+	androidboot.hardware=qcom ehci-hcd.park=3 \
 	lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 \
 	service_locator.enable=1 swiotlb=2048 androidboot.usbconfigfs=true \
 	androidboot.usbcontroller=a800000.dwc3 \
@@ -216,7 +216,7 @@ TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_oneplus
 TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)
 
 # RIL
-TARGET_RIL_VARIANT := caf
+#TARGET_RIL_VARIANT := caf
 PROTOBUF_SUPPORTED := true
 
 # Root
