@@ -92,6 +92,9 @@ persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 ro.vendor.use_data_netmgrd=true
 
+# Dalvik
+dalvik.vm.dex2oat64.enabled=true
+
 # Fling velocities
 ro.min.fling_velocity=140
 ro.max.fling_velocity=20000
