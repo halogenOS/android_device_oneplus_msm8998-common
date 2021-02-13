@@ -270,10 +270,6 @@ on post-fs-data
     mkdir /data/vendor/netmgr 0770 radio radio
     chmod 0770 /data/vendor/netmgr
 
-    # create ipacm log dir
-    mkdir /data/vendor/ipa 0770 radio radio
-    chmod 0770 /data/vendor/ipa
-
     # Create the directories used by CnE subsystem
     mkdir /data/vendor/connectivity 0771 radio radio
     chown radio radio /data/vendor/connectivity
@@ -426,43 +422,6 @@ on boot
     restorecon /dev/dash
 
     chmod 0666 /sys/module/opchain/parameters/boost_tl
-
-    # wulaibin@bsp , 2015/11/18, Modify for RGB light support
-    chown system system /sys/class/leds/red/blink
-    chown system system /sys/class/leds/red/duty_pcts
-    chown system system /sys/class/leds/red/pause_hi
-    chown system system /sys/class/leds/red/pause_lo
-    chown system system /sys/class/leds/red/ramp_step_ms
-    chown system system /sys/class/leds/green/blink
-    chown system system /sys/class/leds/green/duty_pcts
-    chown system system /sys/class/leds/green/pause_hi
-    chown system system /sys/class/leds/green/pause_lo
-    chown system system /sys/class/leds/green/ramp_step_ms
-    chown system system /sys/class/leds/blue/blink
-    chown system system /sys/class/leds/blue/duty_pcts
-    chown system system /sys/class/leds/blue/pause_hi
-    chown system system /sys/class/leds/blue/pause_lo
-    chown system system /sys/class/leds/blue/ramp_step_ms
-
-    chmod 660 /sys/class/leds/red/brightness
-    chmod 660 /sys/class/leds/red/duty_pcts
-    chmod 660 /sys/class/leds/red/ramp_step_ms
-    chmod 660 /sys/class/leds/green/brightness
-    chmod 660 /sys/class/leds/green/duty_pcts
-    chmod 660 /sys/class/leds/green/ramp_step_ms
-    chmod 660 /sys/class/leds/blue/brightness
-    chmod 660 /sys/class/leds/blue/duty_pcts
-    chmod 660 /sys/class/leds/blue/ramp_step_ms
-    chown system system /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/green/brightness
-    chown system system /sys/class/leds/blue/brightness
-
-    chmod 660 /sys/class/leds/led:torch_0/brightness
-    chmod 660 /sys/class/leds/led:torch_1/brightness
-    chmod 660 /sys/class/leds/led:switch_0/brightness
-    chown system system /sys/class/leds/led:torch_0/brightness
-    chown system system /sys/class/leds/led:torch_1/brightness
-    chown system system /sys/class/leds/led:switch_0/brightness
 
     chown system system /proc/touchpanel/gesture_enable
     chown system system /proc/touchpanel/gesture_switch
@@ -652,12 +611,6 @@ service vendor.bt-mac-generator /vendor/bin/bt-mac-generator
     disabled
     seclabel u:r:bt_mac_generator:s0
 
-service vendor.cnd /system/vendor/bin/cnd
-    class main
-    user system
-    group system wifi inet radio wakelock net_admin
-    writepid /dev/cpuset/system-background/tasks
-
 service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
     class late_start
     user system
@@ -667,12 +620,6 @@ service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
 
 on property:sys.powerctl=*
     stop vendor.cnss-daemon
-
-service vendor.dpmQmiMgr /vendor/bin/dpmQmiMgr
-    class main
-    user system
-    group radio system
-    writepid /dev/cpuset/system-background/tasks
 
 # imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
 service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
@@ -714,12 +661,6 @@ service vendor.init-radio-sh /vendor/bin/init.radio.sh
     user root
     group root system radio
     oneshot
-    writepid /dev/cpuset/system-background/tasks
-
-service vendor.ipacm /vendor/bin/ipacm
-    class main
-    user radio
-    group radio inet
     writepid /dev/cpuset/system-background/tasks
 
 service vendor.loc_launcher /vendor/bin/loc_launcher
