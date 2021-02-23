@@ -554,6 +554,4 @@
         <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
     </string-array>
 
-    <!-- LEFT|CENTER_VERTICAL -->
-    <integer name="volume_dialog_gravity">19</integer>
 </resources>
