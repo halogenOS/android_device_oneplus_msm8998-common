@@ -564,4 +564,12 @@
         <item>com.aosip.device.DeviceSettings.KeyHandler</item>
         <item>com.aosip.device.DeviceSettings.TouchKeyHandler</item>
     </string-array>
+
+    <!-- The location of the devices physical tri state switch
+         0: Left side
+         1: Right side -->
+    <integer name="config_alertSliderLocation">0</integer>
+
+    <!-- Whether key handler sends intent when changing slider position -->
+    <string name="config_alertSliderIntent">com.aosip.device.DeviceSettings.UPDATE_SLIDER_POSITION</string>
 </resources>
