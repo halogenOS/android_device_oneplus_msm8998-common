@@ -371,7 +371,10 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti
+    android.hardware.power@1.3-service.oneplus_msm8998
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Protobuf
 PRODUCT_PACKAGES += \
@@ -433,7 +436,8 @@ PRODUCT_SHIPPING_API_LEVEL := 25
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    device/oneplus/msm8998-common
+    $(LOCAL_PATH) \
+    hardware/google/pixel
 
 # Tetheroffload
 PRODUCT_PACKAGES += \
