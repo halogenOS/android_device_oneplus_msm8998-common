@@ -473,6 +473,7 @@ on boot
     write /proc/sys/kernel/random/write_wakeup_threshold 2048
 
 on charger
+    start dashd
     setprop sys.usb.configfs 1
 
     # Enable UFS powersaving
@@ -570,22 +571,6 @@ service charger /system/bin/charger
     group system graphics input
     capabilities SYS_BOOT
     seclabel u:r:charger:s0
-    writepid /dev/cpuset/system-background/tasks
-
-on property:sys.fastcharger=true
-    write /sys/class/power_supply/battery/charging_enabled 1
-
-on property:sys.fastcharger=false
-    write /sys/class/power_supply/battery/charging_enabled 0
-
-on property:persist.sys.oem.otg_support=true
-    write /sys/class/power_supply/usb/otg_switch 1
-
-on property:persist.sys.oem.otg_support=false
-    write /sys/class/power_supply/usb/otg_switch 0
-
-on property:sys.shutdown.requested=*
-    write /sys/module/oneplus_fastchg/parameters/mcu_reset 1
 
 service dashd /vendor/xbin/dashd
      class core
