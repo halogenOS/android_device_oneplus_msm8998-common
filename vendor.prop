@@ -116,10 +116,6 @@ debug.sf.disable_backpressure=1
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 
-# IOP
-vendor.iop.enable_prefetch_ofr=0
-vendor.iop.enable_uxe=0
-
 # Media
 vendor.vidc.debug.level=1
 

@@ -474,6 +474,7 @@ on boot
 
 on charger
     start dashd
+    start vendor.power_off_alarm
     setprop sys.usb.configfs 1
 
     # Enable UFS powersaving
@@ -682,6 +683,12 @@ on property:init.svc.vendor.per_mgr=running
 on property:sys.shutdown.requested=*
     stop vendor.cnss-daemon
     stop vendor.per_proxy
+
+service vendor.power_off_alarm /vendor/bin/power_off_alarm
+    class core
+    group system
+    disabled
+    oneshot
 
 service vendor.ppd /vendor/bin/mm-pp-dpps
     class late_start
